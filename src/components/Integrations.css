@@ -1,0 +1,85 @@
+/* Compatible with Industry-Standard Hiring Systems - matches Figma: gradient left→right, 2x6 grid */
+.integrations-section {
+  position: relative;
+  padding-block: 4rem 4.5rem;
+  overflow: hidden;
+}
+
+.integrations-section__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #ecfdf5 0%, #f0fdf4 30%, #f8fdf9 60%, #ffffff 100%);
+  pointer-events: none;
+}
+
+.integrations-section__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.integrations-section__title {
+  font-size: clamp(1.5rem, 3.5vw, 1.875rem);
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+.integrations-section__desc {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #374151;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.5;
+}
+
+.integrations-section__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+@media (min-width: 600px) {
+  .integrations-section__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .integrations-section__grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.integrations-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88px;
+  padding: 1rem 0.75rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.integrations-card__img {
+  display: block;
+  max-height: 36px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.integrations-card__fallback {
+  display: none;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #374151;
+  text-align: center;
+}

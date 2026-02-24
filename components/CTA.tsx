@@ -11,7 +11,7 @@ export default function CTA() {
           <br />
           Start building our community's workforce ecosystem today.
         </p>
-        <a href="/signup" className="cta-btn">
+        <a href="https://sudbury-city-ui.vercel.app" className="cta-btn">
           Join Sudbury Jobs <span className="cta-btn-arrow">→</span>
         </a>
       </div>

@@ -86,16 +86,7 @@ export default function SeamlessExperience() {
                   ))}
                 </div>
                 <div className="seamless-auth-buttons">
-                  <a href="#" className="seamless-auth-btn seamless-auth-google">
-                    <img src="/assets/seamless/google-icon.svg" alt="" />
-                    Continue with Google
-                  </a>
-                  <a href="#" className="seamless-auth-btn seamless-auth-linkedin">
-                    <img src="/assets/seamless/linkedin-icon.svg" alt="" />
-                    Continue with LinkedIn
-                  </a>
-                  <span className="seamless-auth-divider">or</span>
-                  <a href="/signup" className="btn btn-primary btn-signup">Sign up with email</a>
+                  <a href="https://sudbury-city-ui.vercel.app" className="btn btn-primary btn-signup">Sign up with email</a>
                 </div>
               </div>
             </div>

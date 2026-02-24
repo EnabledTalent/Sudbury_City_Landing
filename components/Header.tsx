@@ -1,7 +1,13 @@
+'use client';
 import Link from 'next/link'
 import React from 'react'
+import { useRouter } from "next/navigation";
 
 export default function Header() {
+  
+
+  
+
   return (
     <header className="header">
       <div className="container header-inner">
@@ -10,8 +16,13 @@ export default function Header() {
           <span className="logo-text">Sudbury Jobs</span>
         </Link>
         <nav className="nav">
-          <Link href="/login" className="nav-link">Log In</Link>
-          <Link href="/signup" className="btn btn-primary btn-header">Sign Up</Link>
+        <a
+  href="https://sudbury-city-ui.vercel.app/#login"
+  className="nav-link"
+>
+  Log In
+</a>
+          <a href="https://sudbury-city-ui.vercel.app" className="btn btn-primary btn-header">Sign Up</a>
         </nav>
       </div>
       <style>{`

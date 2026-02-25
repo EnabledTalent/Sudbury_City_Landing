@@ -1,12 +1,5 @@
 import React from 'react'
-
-const PARTNERS = [
-  { src: '/assets/hero/aws-startup.png', alt: 'AWS Startup Programs' },
-  { src: '/assets/hero/microsoft-startups.png', alt: 'Microsoft for Startups' },
-  { src: '/assets/hero/nvidia.png', alt: 'NVIDIA Inception Program' },
-  { src: '/assets/hero/unicef-startup-lab.png', alt: 'UNICEF Startup Lab' },
-  { src: '/assets/hero/aws-startup.png', alt: 'AWS Startup Programs' },
-]
+import PartnerCarousel from './PartnerCarousel'
 
 export default function Hero() {
   return (
@@ -47,18 +40,7 @@ export default function Hero() {
 
         <div className="hero-partners">
           <div className="container">
-            <div className="hero-partners-row">
-              {PARTNERS.map((partner, index) => (
-                <div key={`${partner.alt}-${index}`} className="hero-partner-item">
-                  <img
-                    src={partner.src}
-                    alt={partner.alt}
-                    className="hero-partner-img"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
+            <PartnerCarousel />
           </div>
         </div>
       </div>
@@ -228,29 +210,7 @@ export default function Hero() {
         }
 
         .hero-partners {
-           padding-block: 2rem 2.5rem;
-        }
-
-        .hero-partners-row {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-          gap: 2.5rem 4rem;
-        }
-
-        .hero-partner-item {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .hero-partner-img {
-          display: block;
-          max-height: 44px;
-          width: auto;
-          height: auto;
-          object-fit: contain;
+          padding-block: 2rem 2.5rem;
         }
 
         @media (max-width: 768px) {
@@ -329,26 +289,6 @@ export default function Hero() {
 
           .hero-partners {
             padding-top: 2rem;
-          }
-
-          .hero-partners-row {
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            gap: 1.25rem;
-          }
-
-          .hero-partner-item:nth-child(n+4) {
-             display: none;
-          }
-
-          .hero-partner-item {
-            flex: 1;
-            min-width: 0;
-          }
-
-          .hero-partner-img {
-            max-height: 40px;
-            max-width: 100%;
           }
         }
       `}</style>

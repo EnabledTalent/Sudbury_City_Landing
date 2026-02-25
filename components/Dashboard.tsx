@@ -3,6 +3,20 @@
 import React, { useState } from 'react'
 
 const USER_TABS = ['Job Seekers', 'Employers', 'Service Providers']
+const TAB_DASHBOARD_IMAGES = [
+  {
+    src: '/assets/dashboard/talent-dashboard.png',
+    alt: 'Job seekers dashboard preview',
+  },
+  {
+    src: '/assets/dashboard/employers-dashboard.png',
+    alt: 'Employers dashboard preview',
+  },
+  {
+    src: '/assets/dashboard/service-providers-dashboard.png',
+    alt: 'Service providers dashboard preview',
+  },
+]
 
 export default function Dashboard() {
   const [userTab, setUserTab] = useState(0)
@@ -29,8 +43,8 @@ export default function Dashboard() {
         </div>
 
         <img
-          src="/assets/dashboard/talent-dashboard.png"
-          alt="Talent dashboard preview"
+          src={TAB_DASHBOARD_IMAGES[userTab].src}
+          alt={TAB_DASHBOARD_IMAGES[userTab].alt}
           className="dashboard-image"
         />
       </div>

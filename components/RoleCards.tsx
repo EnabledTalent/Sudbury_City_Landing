@@ -24,15 +24,15 @@ const JOB_SEEKER_CARDS: RoleCardProps[] = [
 ]
 
 const EMPLOYER_CARDS: RoleCardProps[] = [
-  { title: 'Post a Job', salary: 'Reach local talent', hired: '128', label: 'Active listings' },
-  { title: 'Browse Candidates', salary: 'Match by skills', hired: '340', label: 'Candidates' },
-  { title: 'Manage Hires', salary: 'Onboard and track', hired: '24', label: 'This month' },
+  { title: 'Vale Canada', salary: 'Mining', hired: '56', label: 'Open Positions' },
+  { title: 'Health Sciences North', salary: 'Healthcare', hired: '56', label: 'Open Positions' },
+  { title: 'Greater Sudbury', salary: 'Public Sector', hired: '56', label: 'Open Positions' },
 ]
 
 const PROVIDER_CARDS: RoleCardProps[] = [
-  { title: 'Training Programs', salary: 'Upskill workforce', hired: '18', label: 'Programs' },
-  { title: 'Workforce Services', salary: 'Support job seekers', hired: '12', label: 'Partners' },
-  { title: 'Partner Portal', salary: 'Manage referrals', hired: '8', label: 'Active' },
+  { title: 'Sudbury Employment Solutions', salary: 'Job Placement', hired: '56', label: 'Clients Served' },
+  { title: 'Northern Skills Academy', salary: 'Skills Training', hired: '56', label: 'Clients Served' },
+  { title: 'Workforce Development Centre', salary: 'Career Counseling', hired: '56', label: 'Clients Served' },
 ]
 
 function RoleCard({ title, salary, hired, label = 'Recently Hired' }: RoleCardProps) {
@@ -403,8 +403,7 @@ export default function RoleCards() {
           }
 
           .carousel-controls {
-            width: 100%;
-            justify-content: flex-start;
+            display: none;
           }
 
           .carousel-btn {
@@ -413,11 +412,25 @@ export default function RoleCards() {
           }
 
           .role-cards-track {
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
             gap: 1rem;
+            padding-inline: 1.25rem;
+            padding-bottom: 2rem;
+            margin-inline: -1.25rem;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+
+          .role-cards-track::-webkit-scrollbar {
+            display: none;
           }
 
           .role-card {
+            flex: 0 0 calc(85% - 0.5rem);
+            scroll-snap-align: center;
             min-height: 186px;
             padding: 1.2rem 1rem;
             border-radius: 14px;

@@ -4,7 +4,11 @@ export default function PlatformFeatures() {
   return (
     <section className="platform-features" id="platform-features">
       <div className="platform-container">
-        <h2 className="platform-features-title">One Platform, Unlimited Possibilities</h2>
+        <h2 className="platform-features-title">
+          <span className="platform-title-line1">One Platform, Unlimited</span>
+          <br className="platform-title-br" />
+          <span className="platform-title-line2">Possibilities</span>
+        </h2>
         <p className="platform-features-subtitle">
           Everything you need for workforce development in Greater Sudbury, all in one accessible platform
         </p>
@@ -81,6 +85,10 @@ export default function PlatformFeatures() {
           text-align: center;
           margin: 0 0 0.5rem;
           letter-spacing: -0.02em;
+        }
+
+        .platform-title-br {
+          display: none;
         }
 
         .platform-features-subtitle {
@@ -171,11 +179,19 @@ export default function PlatformFeatures() {
           }
 
           .platform-features-title {
-            font-size: 2.35rem;
+            font-size: 2.12rem;
             line-height: 1.12;
             margin-bottom: 0.9rem;
             max-width: 360px;
             margin-inline: auto;
+          }
+
+          .platform-title-br {
+            display: block;
+          }
+
+          .platform-title-line1 {
+            white-space: nowrap;
           }
 
           .platform-features-subtitle {
@@ -188,7 +204,7 @@ export default function PlatformFeatures() {
           .platform-features-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.55rem;
+            gap: 2.15rem;
           }
 
           .feature-block {
@@ -197,12 +213,12 @@ export default function PlatformFeatures() {
           }
 
           .feature-icon img {
-            width: 72px;
-            height: 72px;
+            width: 62px;
+            height: 62px;
           }
 
           .feature-block-title {
-            font-size: 1.9rem;
+            font-size: 1.42rem;
             margin: 0.2rem 0 0.1rem;
           }
 

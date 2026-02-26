@@ -456,12 +456,14 @@ export default function RoleCards() {
           }
 
           .carousel-controls {
-            display: none;
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
           }
 
           .carousel-btn {
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
           }
 
           .role-cards-track {

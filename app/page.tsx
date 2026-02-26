@@ -1,6 +1,5 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import HowItWorks from '@/components/HowItWorks'
 import RoleCards from '@/components/RoleCards'
 import PlatformFeatures from '@/components/PlatformFeatures'
 import Stakeholders from '@/components/Stakeholders'

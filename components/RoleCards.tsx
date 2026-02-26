@@ -45,7 +45,13 @@ function RoleCard({ title, salary, hired, label = 'Recently Hired' }: RoleCardPr
           <img className="role-card-avatars" src="/assets/role-cards/people-icons.svg" alt="" aria-hidden="true" />
           <span className="role-card-hired">{label}: <strong>{hired}</strong></span>
         </div>
-        <a href="#" className="role-card-link">See more</a>
+        <a
+          href="https://sudbury-city-ui.vercel.app/"
+          className="role-card-link"
+          aria-label={`See more about ${title}`}
+        >
+          See more
+        </a>
       </div>
     </article>
   )
@@ -65,8 +71,31 @@ export default function RoleCards() {
     employers: employersRef,
     'service-providers': providersRef,
   }
+  const tabButtonRefs = useRef<Record<TabId, HTMLButtonElement | null>>({
+    'job-seekers': null,
+    employers: null,
+    'service-providers': null,
+  })
 
   const getActiveTrack = () => refs[activeTab]?.current ?? null
+
+  const handleTabKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, currentId: TabId) => {
+    const currentIndex = TABS.findIndex((tab) => tab.id === currentId)
+    if (currentIndex === -1) return
+
+    let nextIndex = currentIndex
+    if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % TABS.length
+    if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + TABS.length) % TABS.length
+    if (event.key === 'Home') nextIndex = 0
+    if (event.key === 'End') nextIndex = TABS.length - 1
+
+    if (nextIndex !== currentIndex) {
+      event.preventDefault()
+      const nextTab = TABS[nextIndex].id
+      setActiveTab(nextTab)
+      tabButtonRefs.current[nextTab]?.focus()
+    }
+  }
 
   const updateCarouselButtons = () => {
     const track = getActiveTrack()
@@ -109,12 +138,19 @@ export default function RoleCards() {
             {TABS.map(({ id, label }) => (
               <button
                 key={id}
+                id={`tab-${id}`}
                 type="button"
                 className={`role-tab ${activeTab === id ? 'active' : ''}`}
                 role="tab"
                 aria-selected={activeTab === id}
+                aria-controls={`panel-${id}`}
+                tabIndex={activeTab === id ? 0 : -1}
                 data-tab={id}
+                ref={(el) => {
+                  tabButtonRefs.current[id] = el
+                }}
                 onClick={() => setActiveTab(id)}
+                onKeyDown={(event) => handleTabKeyDown(event, id)}
               >
                 {label}
               </button>
@@ -142,6 +178,7 @@ export default function RoleCards() {
             className={`role-panel ${activeTab === 'job-seekers' ? 'active' : ''}`}
             id="panel-job-seekers"
             role="tabpanel"
+            aria-labelledby="tab-job-seekers"
             hidden={activeTab !== 'job-seekers'}
           >
             <div className="role-cards-track" data-carousel="job-seekers" ref={refs['job-seekers']}>
@@ -154,6 +191,7 @@ export default function RoleCards() {
             className={`role-panel ${activeTab === 'employers' ? 'active' : ''}`}
             id="panel-employers"
             role="tabpanel"
+            aria-labelledby="tab-employers"
             hidden={activeTab !== 'employers'}
           >
             <div className="role-cards-track" data-carousel="employers" ref={refs.employers}>
@@ -166,6 +204,7 @@ export default function RoleCards() {
             className={`role-panel ${activeTab === 'service-providers' ? 'active' : ''}`}
             id="panel-service-providers"
             role="tabpanel"
+            aria-labelledby="tab-service-providers"
             hidden={activeTab !== 'service-providers'}
           >
             <div className="role-cards-track" data-carousel="service-providers" ref={refs['service-providers']}>
@@ -216,6 +255,7 @@ export default function RoleCards() {
           padding: 0.9rem 2rem;
           border-radius: 16px;
           cursor: pointer;
+          min-width: 0;
           transition: color 0.2s, background 0.2s, box-shadow 0.2s;
         }
 
@@ -226,11 +266,18 @@ export default function RoleCards() {
 
         .role-tab.active {
           color: #ffffff;
-          background: #0f8f38;
+          background: #0b6d2b;
           font-family: 'Outfit', sans-serif;
           font-weight: 400;
           line-height: 1;
           box-shadow: 0 6px 14px rgba(14, 143, 55, 0.25);
+        }
+
+        .role-tab:focus-visible,
+        .carousel-btn:focus-visible,
+        .role-card-link:focus-visible {
+          outline: 3px solid #14532d;
+          outline-offset: 2px;
         }
 
         .carousel-controls {
@@ -313,7 +360,7 @@ export default function RoleCards() {
 
         .role-card-salary {
           font-size: 0.85rem;
-          color: #9aa3af;
+          color: #6b7280;
           margin: 0 0 auto;
           padding-bottom: 1.1rem;
         }
@@ -344,8 +391,9 @@ export default function RoleCards() {
 
         .role-card-hired {
           font-size: 0.78rem;
-          color: #9aa3af;
-          white-space: nowrap;
+          color: #6b7280;
+          white-space: normal;
+          overflow-wrap: anywhere;
         }
 
         .role-card-hired strong {
@@ -354,13 +402,17 @@ export default function RoleCards() {
         }
 
         .role-card-link {
+          display: inline-flex;
+          align-items: center;
+          min-height: 24px;
           font-size: 0.78rem;
           font-weight: 600;
-          color: #00ee5c;
+          color: #0b6d2b;
           margin-left: auto;
           padding-left: 0.25rem;
           text-decoration: none;
-          white-space: nowrap;
+          white-space: normal;
+          text-align: right;
         }
 
         @media (max-width: 900px) {
@@ -399,7 +451,8 @@ export default function RoleCards() {
             border-radius: 14px;
             width: 100%;
             text-align: center;
-            white-space: nowrap;
+            white-space: normal;
+            line-height: 1.2;
           }
 
           .carousel-controls {
@@ -417,9 +470,9 @@ export default function RoleCards() {
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             gap: 1rem;
-            padding-inline: 1.25rem;
+            padding-inline: 0.25rem;
             padding-bottom: 2rem;
-            margin-inline: -1.25rem;
+            margin-inline: 0;
             -ms-overflow-style: none;
             scrollbar-width: none;
           }
@@ -429,8 +482,9 @@ export default function RoleCards() {
           }
 
           .role-card {
-            flex: 0 0 calc(85% - 0.5rem);
-            scroll-snap-align: center;
+            flex: 0 0 100%;
+            max-width: 100%;
+            scroll-snap-align: start;
             min-height: 186px;
             padding: 1.2rem 1rem;
             border-radius: 14px;
@@ -449,6 +503,7 @@ export default function RoleCards() {
           .role-card-footer {
             padding-top: 0.8rem;
             gap: 0.45rem;
+            align-items: flex-start;
           }
 
           .role-card-left {
@@ -461,16 +516,26 @@ export default function RoleCards() {
           }
 
           .role-card-hired {
-            font-size: 0.5rem;
+            font-size: 0.75rem;
           }
 
           .role-card-link {
-            font-size: 0.5rem;
+            font-size: 0.75rem;
             padding-left: 0;
           }
 
           .role-cards-track {
             grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .role-tabs {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .role-tab[data-tab='service-providers'] {
+            grid-column: 1 / -1;
           }
         }
       `}</style>

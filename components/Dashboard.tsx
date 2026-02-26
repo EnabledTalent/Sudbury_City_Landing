@@ -116,8 +116,13 @@ export default function Dashboard() {
 
         .dashboard-tab.active {
           color: #ffffff;
-          background: #0f8f38;
+          background: #0b6d2b;
           box-shadow: 0 6px 14px rgba(14, 143, 55, 0.25);
+        }
+
+        .dashboard-tab:focus-visible {
+          outline: 3px solid #14532d;
+          outline-offset: 2px;
         }
 
         .dashboard-image {

@@ -208,13 +208,6 @@ export default function SeamlessExperience() {
           display: none;
         }
 
-        .container {
-          width: 100%;
-          max-width: 100%;
-          padding-left: 14rem;
-          margin: 0;
-        }
-
         .seamless-grid {
           display: grid;
           grid-template-columns: 1fr;
@@ -233,7 +226,7 @@ export default function SeamlessExperience() {
 
         .seamless-grid--part2 {
           max-width: 1660px;
-          grid-template-columns: 1fr 1.5fr !important;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
           margin-left: 0;
         }
 
@@ -277,7 +270,7 @@ export default function SeamlessExperience() {
 
         .seamless-step-desc {
           font-size: 17px;
-          color: #9aa3af;
+          color: #6b7280;
           line-height: 1.6;
           margin: 0;
           max-width: 1000px;
@@ -347,10 +340,10 @@ export default function SeamlessExperience() {
         }
 
         .seamless-role-card.active {
-          background: linear-gradient(180deg, #00cb53 0%, #00e75e 100%);
+          background: linear-gradient(180deg, #0b6d2b 0%, #0a5f26 100%);
           color: #ffffff;
           border-color: transparent;
-          box-shadow: 0 10px 30px rgba(0, 203, 83, 0.4);
+          box-shadow: 0 10px 30px rgba(11, 109, 43, 0.35);
           transform: translateY(-2px);
         }
 
@@ -379,8 +372,8 @@ export default function SeamlessExperience() {
           background: #ffffff;
           color: #1a1a1a;
           transition: all 0.2s ease;
-          width: fit-content;
-          min-width: 280px;
+          width: min(100%, 300px);
+          min-width: 0;
           max-width: 300px;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
           text-decoration: none;
@@ -401,7 +394,7 @@ export default function SeamlessExperience() {
 
         .seamless-auth-divider {
           font-size: 0.875rem;
-          color: #9aa3af;
+          color: #6b7280;
           text-align: center;
           margin: 0.25rem 0;
         }
@@ -466,8 +459,9 @@ export default function SeamlessExperience() {
           background: #ffffff;
           box-shadow: 0 15px 45px rgba(17, 24, 39, 0.08);
           position: relative;
-          min-width: 480px;
-          width: 480px;
+          width: min(100%, 480px);
+          max-width: 100%;
+          min-width: 0;
           flex-direction: column;
         }
 
@@ -510,13 +504,13 @@ export default function SeamlessExperience() {
           margin: 0;
           color: #4b5563;
           line-height: 1.3;
-          white-space: nowrap;
+          white-space: normal;
         }
 
         .seamless-notif-meta {
           display: block;
           font-size: 15px;
-          color: #9aa3af;
+          color: #6b7280;
           margin-top: 0.25rem;
         }
 
@@ -582,7 +576,7 @@ export default function SeamlessExperience() {
 
         .seamless-feature-desc {
           font-size: 16px;
-          color: #9aa3af;
+          color: #6b7280;
           line-height: 1.5;
           margin: 0;
           max-width: 650px;

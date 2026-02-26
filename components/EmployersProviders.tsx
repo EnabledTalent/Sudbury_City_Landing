@@ -443,7 +443,7 @@ export default function EmployersProviders() {
 
         .ep-activity-time {
           font-size: 16px;
-          color: #9ca3af;
+          color: #6b7280;
           flex-shrink: 0;
           margin-left: auto;
         }
@@ -463,11 +463,13 @@ export default function EmployersProviders() {
         .ep-dashboard-preview {
           position: relative;
           background: radial-gradient(circle at 50% 50%, #DBEAFE 0%, rgba(255, 255, 255, 0) 70%);
-          padding: 5rem 2rem;
-          margin: 0 -3rem 2.5rem;
+          padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 2.5vw, 2rem);
+          margin: 0 0 2.5rem;
           display: flex;
           flex-direction: column;
           align-items: center;
+          width: 100%;
+          overflow: hidden;
         }
 
         .ep-branding-icon {
@@ -496,7 +498,7 @@ export default function EmployersProviders() {
 
         .ep-quick-actions {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(3, minmax(0, 1fr));
           gap: 1.25rem;
           margin-bottom: 2rem;
           width: 100%;
@@ -513,6 +515,7 @@ export default function EmployersProviders() {
           border: 1px solid #eef2f6;
           border-radius: 18px;
           box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+          min-width: 0;
         }
 
         .ep-quick-icon {
@@ -532,6 +535,9 @@ export default function EmployersProviders() {
           font-weight: 500;
           color: #111827;
           text-align: center;
+          white-space: normal;
+          overflow-wrap: anywhere;
+          line-height: 1.25;
         }
 
         .ep-providers {
@@ -542,11 +548,13 @@ export default function EmployersProviders() {
           position: relative;
           background: radial-gradient(circle at 50% 50%, #F3E8FF 0%, rgba(255, 255, 255, 0) 70%);
           background-blend-mode: multiply;
-          padding: 5rem 2.5rem;
-          margin: 0 -2.5rem;
+          padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 2.5vw, 2.5rem);
+          margin: 0;
           display: flex;
           flex-direction: column;
           align-items: stretch;
+          width: 100%;
+          overflow: hidden;
         }
 
         .ep-program-overview {
@@ -590,7 +598,7 @@ export default function EmployersProviders() {
           .ep-dashboard-preview--mobile-only {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
             background: radial-gradient(circle at 50% 35%, #dbeafe 0%, rgba(255, 255, 255, 0) 70%);
             padding: 2.25rem 1rem 1.5rem;
             margin: 0;
@@ -615,6 +623,13 @@ export default function EmployersProviders() {
             align-items: center;
             text-align: center;
             gap: 0.85rem;
+            width: 100%;
+          }
+
+          .ep-employers .ep-feature-body {
+            width: 100%;
+            max-width: 320px;
+            min-width: 0;
           }
 
           .ep-employers .ep-feature-icon {
@@ -636,8 +651,9 @@ export default function EmployersProviders() {
           .ep-employers .ep-feature-desc {
             font-size: 0.82rem;
             line-height: 1.4;
-            max-width: 320px;
+            max-width: 100%;
             margin-inline: auto;
+            overflow-wrap: break-word;
           }
 
           /* hide the desktop stats that live under the employers column on mobile */
@@ -707,6 +723,13 @@ export default function EmployersProviders() {
             align-items: center;
             text-align: center;
             gap: 0.85rem;
+            width: 100%;
+          }
+
+          .ep-providers .ep-feature-body {
+            width: 100%;
+            max-width: 320px;
+            min-width: 0;
           }
 
           .ep-providers .ep-feature-icon {
@@ -728,8 +751,9 @@ export default function EmployersProviders() {
           .ep-providers .ep-feature-desc {
             font-size: 0.82rem;
             line-height: 1.4;
-            max-width: 320px;
+            max-width: 100%;
             margin-inline: auto;
+            overflow-wrap: break-word;
           }
 
           .ep-providers .ep-main-heading {
@@ -737,7 +761,7 @@ export default function EmployersProviders() {
           }
 
           .ep-branding-card {
-            max-width: 360px;
+            max-width: 100%;
             padding: 1.6rem 1.25rem;
             margin-bottom: 1.1rem;
           }
@@ -758,7 +782,8 @@ export default function EmployersProviders() {
           .ep-quick-actions {
             gap: 0.75rem;
             margin-bottom: 0;
-            max-width: 360px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            max-width: 100%;
           }
 
           .ep-quick-action {
@@ -773,6 +798,16 @@ export default function EmployersProviders() {
 
           .ep-quick-label {
             font-size: 0.72rem;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .ep-quick-actions {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .ep-quick-action:last-child {
+            grid-column: 1 / -1;
           }
         }
       `}</style>

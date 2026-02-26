@@ -9,7 +9,7 @@ const FEATURES = {
     'Build and manage your professional profile',
     'Track applications and interview schedules in one place',
     'Receive career counseling and support services',
-    'Get matched with opportunities in Greater Sudbury'
+    'Get matched with opportunities in Greater Sudbury',
   ],
   employers: [
     'Post job openings and reach qualified Sudbury candidates',
@@ -17,7 +17,7 @@ const FEATURES = {
     'Integrate with Sudbury workforce development programs',
     'Manage applicants with streamlined workflows',
     'Access local talent pools and skill databases',
-    'Receive support for diversity hiring initiatives'
+    'Receive support for diversity hiring initiatives',
   ],
   providers: [
     'List programs and services in the Sudbury directory',
@@ -25,16 +25,25 @@ const FEATURES = {
     'Coordinate with other Sudbury service providers',
     'Manage referrals from employers and job seekers',
     'Schedule appointments and manage calendars',
-    'Generate reports and track program effectiveness'
-  ]
+    'Generate reports and track program effectiveness',
+  ],
 }
 
-export default function Stakeholders() {
-  const [flipped, setFlipped] = useState({ seekers: false, employers: false, providers: false });
+type Role = 'seekers' | 'employers' | 'providers'
 
-  const toggleFlip = (role: 'seekers' | 'employers' | 'providers') => {
-    setFlipped(prev => ({ ...prev, [role]: !prev[role] }));
-  };
+export default function Stakeholders() {
+  const [flipped, setFlipped] = useState({ seekers: false, employers: false, providers: false })
+
+  const toggleFlip = (role: Role) => {
+    setFlipped((prev) => ({ ...prev, [role]: !prev[role] }))
+  }
+
+  const onCardKeyDown = (event: React.KeyboardEvent<HTMLDivElement>, role: Role) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      toggleFlip(role)
+    }
+  }
 
   return (
     <section className="stakeholders-section" id="stakeholders">
@@ -44,9 +53,17 @@ export default function Stakeholders() {
         <p className="stakeholders-subtitle">
           Role-specific features designed to meet the unique needs of each user type
         </p>
+
         <div className="stakeholder-cards">
-          {/* Job Seekers */}
-          <div className="stakeholder-card-container" onClick={() => toggleFlip('seekers')}>
+          <div
+            className="stakeholder-card-container"
+            role="button"
+            tabIndex={0}
+            aria-label="Toggle details for Job Seekers"
+            aria-pressed={flipped.seekers}
+            onClick={() => toggleFlip('seekers')}
+            onKeyDown={(event) => onCardKeyDown(event, 'seekers')}
+          >
             <div className={`stakeholder-card-inner ${flipped.seekers ? 'is-flipped' : ''}`}>
               <article className="stakeholder-card-face stakeholder-card-front stakeholder-card--seekers">
                 <span className="stakeholder-card-icon" aria-hidden="true">
@@ -58,7 +75,7 @@ export default function Stakeholders() {
                 <ul className="stakeholder-features-list">
                   {FEATURES.seekers.map((feature, i) => (
                     <li key={i}>
-                      <span className="checkmark">✔</span>
+                      <span className="checkmark" aria-hidden="true">{'\u2713'}</span>
                       {feature}
                     </li>
                   ))}
@@ -67,8 +84,15 @@ export default function Stakeholders() {
             </div>
           </div>
 
-          {/* Employers */}
-          <div className="stakeholder-card-container" onClick={() => toggleFlip('employers')}>
+          <div
+            className="stakeholder-card-container"
+            role="button"
+            tabIndex={0}
+            aria-label="Toggle details for Employers"
+            aria-pressed={flipped.employers}
+            onClick={() => toggleFlip('employers')}
+            onKeyDown={(event) => onCardKeyDown(event, 'employers')}
+          >
             <div className={`stakeholder-card-inner ${flipped.employers ? 'is-flipped' : ''}`}>
               <article className="stakeholder-card-face stakeholder-card-front stakeholder-card--employers">
                 <span className="stakeholder-card-icon" aria-hidden="true">
@@ -80,7 +104,7 @@ export default function Stakeholders() {
                 <ul className="stakeholder-features-list">
                   {FEATURES.employers.map((feature, i) => (
                     <li key={i}>
-                      <span className="checkmark">✔</span>
+                      <span className="checkmark" aria-hidden="true">{'\u2713'}</span>
                       {feature}
                     </li>
                   ))}
@@ -89,8 +113,15 @@ export default function Stakeholders() {
             </div>
           </div>
 
-          {/* Service Providers */}
-          <div className="stakeholder-card-container" onClick={() => toggleFlip('providers')}>
+          <div
+            className="stakeholder-card-container"
+            role="button"
+            tabIndex={0}
+            aria-label="Toggle details for Service Providers"
+            aria-pressed={flipped.providers}
+            onClick={() => toggleFlip('providers')}
+            onKeyDown={(event) => onCardKeyDown(event, 'providers')}
+          >
             <div className={`stakeholder-card-inner ${flipped.providers ? 'is-flipped' : ''}`}>
               <article className="stakeholder-card-face stakeholder-card-front stakeholder-card--providers">
                 <span className="stakeholder-card-icon" aria-hidden="true">
@@ -102,7 +133,7 @@ export default function Stakeholders() {
                 <ul className="stakeholder-features-list">
                   {FEATURES.providers.map((feature, i) => (
                     <li key={i}>
-                      <span className="checkmark">✔</span>
+                      <span className="checkmark" aria-hidden="true">{'\u2713'}</span>
                       {feature}
                     </li>
                   ))}
@@ -112,10 +143,11 @@ export default function Stakeholders() {
           </div>
         </div>
       </div>
+
       <style>{`
         .stakeholders-section {
           padding-block: 12rem 4.5rem;
-          background: #FCFCFC;
+          background: #fcfcfc;
           position: relative;
         }
 
@@ -130,7 +162,7 @@ export default function Stakeholders() {
 
         .stakeholders-subtitle {
           font-size: 20px;
-          color: #9aa3af;
+          color: #6b7280;
           text-align: center;
           max-width: 900px;
           margin: 0 auto 4.25rem;
@@ -149,6 +181,12 @@ export default function Stakeholders() {
           perspective: 1000px;
           min-height: 360px;
           cursor: pointer;
+        }
+
+        .stakeholder-card-container:focus-visible {
+          outline: 3px solid #14532d;
+          outline-offset: 4px;
+          border-radius: 18px;
         }
 
         .stakeholder-card-inner {
@@ -171,7 +209,7 @@ export default function Stakeholders() {
           padding: 1.5rem 1.25rem;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .stakeholder-card-front {
@@ -263,6 +301,7 @@ export default function Stakeholders() {
             min-height: auto;
             cursor: default;
           }
+
           .stakeholder-card-inner {
             transform: none !important;
             transition: none !important;
@@ -271,8 +310,9 @@ export default function Stakeholders() {
             flex-direction: column;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
           }
+
           .stakeholder-card-face {
             position: relative;
             transform: none !important;
@@ -281,9 +321,11 @@ export default function Stakeholders() {
             border-radius: 0;
             padding: 1.5rem 1.25rem;
           }
+
           .stakeholder-card-front {
             padding-bottom: 0.75rem;
           }
+
           .stakeholder-card-back {
             padding-top: 0.75rem;
           }

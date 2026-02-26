@@ -21,10 +21,9 @@ type IntegrationCardProps = {
   domain?: string
   src?: string
   label: string
-  isBottomRow?: boolean
 }
 
-function IntegrationCard({ name, domain, src, label, isBottomRow = false }: IntegrationCardProps) {
+function IntegrationCard({ name, domain, src, label }: IntegrationCardProps) {
   const logoUrl = src ?? `https://logo.clearbit.com/${domain}`
 
   const handleError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
@@ -38,12 +37,12 @@ function IntegrationCard({ name, domain, src, label, isBottomRow = false }: Inte
     <div className="integrations-card" title={name}>
       <img
         src={logoUrl}
-        alt=""
-        className={`integrations-card__img ${isBottomRow ? 'integrations-card__img--bottom' : ''} ${name === 'Recruit CRM' ? 'integrations-card__img--recruitcrm' : ''}`}
+        alt={name}
+        className="integrations-card__img"
         loading="lazy"
         onError={handleError}
       />
-      <span className="integrations-card__fallback" aria-hidden="true">{label}</span>
+      <span className="integrations-card__fallback">{label}</span>
     </div>
   )
 }
@@ -63,8 +62,8 @@ export default function Integrations() {
           secure, compliant data exchange.
         </p>
         <div className="integrations-section__grid">
-          {ATS_LOGOS.map((item, index) => (
-            <IntegrationCard key={item.name} {...item} isBottomRow={index >= 6} />
+          {ATS_LOGOS.map((item) => (
+            <IntegrationCard key={item.name} {...item} />
           ))}
         </div>
       </div>
@@ -132,10 +131,6 @@ export default function Integrations() {
             grid-template-columns: repeat(6, 1fr);
             gap: 2.25rem 1.25rem;
           }
-
-          .integrations-section__grid > .integrations-card:nth-child(n+7) {
-            transform: translateX(4.25rem);
-          }
         }
 
         .integrations-card {
@@ -153,21 +148,11 @@ export default function Integrations() {
 
         .integrations-card__img {
           display: block;
-          max-height: 52px;
+          max-height: clamp(30px, 3vw, 52px);
           max-width: 100%;
           width: auto;
           height: auto;
           object-fit: contain;
-          transform: scale(1.0);
-          transform-origin: center;
-        }
-
-        .integrations-card__img--bottom {
-          transform: scale(1.7);
-        }
-
-        .integrations-card__img--recruitcrm {
-          transform: scale(2.1);
         }
 
         .integrations-card__fallback {

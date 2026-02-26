@@ -23,38 +23,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={outfit.className} style={{ '--font': outfit.style.fontFamily } as React.CSSProperties}>
         {children}
-        <style>{`
-          :root {
-            --green: #16a34a;
-            --green-dark: #15803d;
-            --text: #1a1a1a;
-            --text-muted: #6b7280;
-            --border: #e5e7eb;
-            --bg: #ffffff;
-          }
-
-          *, *::before, *::after {
-            box-sizing: border-box;
-          }
-
-          html {
-            scroll-behavior: smooth;
-          }
-
-          body {
-            margin: 0;
-            font-family: var(--font);
-            font-size: 1rem;
-            line-height: 1.5;
-            color: var(--text);
-            background: var(--bg);
-          }
-
-          a {
-            color: inherit;
-            text-decoration: none;
-          }
-        `}</style>
       </body>
     </html>
   )

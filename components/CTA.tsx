@@ -24,8 +24,8 @@ export default function CTA() {
 
         .cta-section {
           padding-block: 8.5rem 9rem;
-          background-color: #00DF3B;
-          background-image: linear-gradient(135deg, #00DF3B 0%, #00C853 100%);
+          background-color: #0b6d2b;
+          background-image: linear-gradient(135deg, #0b6d2b 0%, #0a5f26 100%);
           position: relative;
           overflow: hidden;
           color: #ffffff;

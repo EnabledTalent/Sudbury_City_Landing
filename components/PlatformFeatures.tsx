@@ -68,8 +68,7 @@ export default function PlatformFeatures() {
           width: 100%;
           max-width: 100%;
           margin: 0;
-          padding: 0 !important;
-          padding-left: 0 !important;
+          padding: 0;
           box-sizing: border-box;
         }
 
@@ -93,7 +92,7 @@ export default function PlatformFeatures() {
 
         .platform-features-subtitle {
           font-size: 20px;
-          color: #9aa3af;
+          color: #6b7280;
           text-align: center;
           max-width: 1100px;
           margin: 0 auto 5.5rem;
@@ -101,10 +100,9 @@ export default function PlatformFeatures() {
         }
 
         .platform-features-grid {
-          display: flex;
-          flex-wrap: nowrap;
-          justify-content: flex-start;
-          gap: 2rem;
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: clamp(1rem, 2vw, 2rem);
           padding: 0;
           border: none;
           border-radius: 0;
@@ -117,8 +115,8 @@ export default function PlatformFeatures() {
           gap: 0.75rem;
           align-items: center;
           text-align: center;
-          width: 350px;
-          flex-shrink: 0;
+          width: auto;
+          min-width: 0;
         }
 
         .feature-icon {
@@ -138,7 +136,9 @@ export default function PlatformFeatures() {
 
         .feature-block-title {
           font-size: 20px;
-          white-space: nowrap;
+          white-space: normal;
+          overflow-wrap: anywhere;
+          line-height: 1.2;
           font-weight: 700;
           color: #111827;
           margin: 0;
@@ -146,12 +146,18 @@ export default function PlatformFeatures() {
 
         .feature-block-desc {
           font-size: 16px;
-          color: #9aa3af;
+          color: #6b7280;
           line-height: 1.6;
           margin: 0 auto;
           width: 100%;
           max-width: none;
           letter-spacing: -0.01em;
+        }
+
+        @media (max-width: 1200px) {
+          .platform-features-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+          }
         }
 
         @media (max-width: 900px) {
@@ -160,29 +166,21 @@ export default function PlatformFeatures() {
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1.5rem;
           }
-          .feature-block-title {
-            white-space: normal;
-          }
           .feature-block {
             width: auto;
           }
         }
 
         @media (max-width: 640px) {
-          .platform-container {
-            width: min(100% - 1rem, 1200px);
-            padding-inline: 0.5rem;
-          }
-
           .platform-features {
             padding-block: 2.25rem 2.5rem;
           }
 
           .platform-features-title {
-            font-size: 2.12rem;
-            line-height: 1.12;
+            font-size: clamp(1.8rem, 7vw, 2.12rem);
+            line-height: 1.15;
             margin-bottom: 0.9rem;
-            max-width: 360px;
+            max-width: 100%;
             margin-inline: auto;
           }
 
@@ -191,7 +189,7 @@ export default function PlatformFeatures() {
           }
 
           .platform-title-line1 {
-            white-space: nowrap;
+            white-space: normal;
           }
 
           .platform-features-subtitle {

@@ -70,6 +70,11 @@ export default function PartnerCarousel() {
           gap: 5rem;
         }
 
+        .partner-carousel-inner:hover .animate-marquee,
+        .partner-carousel-inner:focus-within .animate-marquee {
+          animation-play-state: paused;
+        }
+
         .partner-logo-wrap {
           display: flex;
           height: 3.5rem;

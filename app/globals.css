@@ -1,3 +1,73 @@
+/* Global design tokens and base styles */
+:root {
+  --green: #16a34a;
+  --green-dark: #15803d;
+  --green-bright: #0b6d2b;
+  --green-glow: #0a5f26;
+  --text: #1a1a1a;
+  --text-muted: #6b7280;
+  --text-soft: #6b7280;
+  --border: #e5e7eb;
+  --surface: #ffffff;
+  --surface-subtle: #f8fafc;
+  --bg: #ffffff;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 10px 24px rgba(17, 24, 39, 0.08);
+  --shadow-cta: 0 10px 25px rgba(0, 203, 83, 0.25);
+  --container-max: 1400px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font, sans-serif);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(a, button, [role='button'], input, select, textarea, summary):focus-visible {
+  outline: 3px solid #14532d;
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page-container {
+  width: min(100% - 2rem, var(--container-max));
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Force a uniform page max width across all section wrappers */
+:where(.page-container, .container, .ep-wrap, .platform-container) {
+  width: min(100% - 2rem, var(--container-max)) !important;
+  max-width: var(--container-max) !important;
+  margin-inline: auto !important;
+  padding-inline: 1.5rem !important;
+}
+
 @layer utilities {
   .animate-marquee {
     animation: marquee 25s linear infinite;
@@ -17,5 +87,17 @@
   .animate-marquee {
     animation: none !important;
     transform: translateX(0) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-container {
+    width: min(100% - 1rem, var(--container-max));
+    padding-inline: 0.5rem;
+  }
+
+  :where(.page-container, .container, .ep-wrap, .platform-container) {
+    width: min(100% - 1rem, var(--container-max)) !important;
+    padding-inline: 0.5rem !important;
   }
 }

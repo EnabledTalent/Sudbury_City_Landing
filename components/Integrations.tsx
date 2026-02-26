@@ -9,7 +9,6 @@ const ATS_LOGOS = [
   { name: 'Workable', src: '/assets/compatible/workable.svg', label: 'Workable' },
   { name: 'Findem', src: '/assets/compatible/findem.svg', label: 'Findem' },
   { name: 'Workday', src: '/assets/compatible/workday.svg', label: 'Workday' },
-  { name: 'GitHub', src: '/assets/compatible/github.png', label: 'GitHub' },
   { name: 'Indeed', src: '/assets/compatible/indeed.png', label: 'indeed' },
   { name: 'Recruit CRM', src: '/assets/compatible/recruitcrm.png', label: 'recruit crm' },
   { name: 'Personio', src: '/assets/compatible/personio.png', label: 'Personio' },
@@ -132,6 +131,10 @@ export default function Integrations() {
           .integrations-section__grid {
             grid-template-columns: repeat(6, 1fr);
             gap: 2.25rem 1.25rem;
+          }
+
+          .integrations-section__grid > .integrations-card:nth-child(n+7) {
+            transform: translateX(4.25rem);
           }
         }
 

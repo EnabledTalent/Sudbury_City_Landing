@@ -29,10 +29,10 @@ export default function Hero() {
             platform.
           </p>
           <div className="hero-ctas">
-            <a href="/signup" className="btn-pill btn-primary-pill">
+            <a href="https://sudbury-city-ui.vercel.app/" className="btn-pill btn-primary-pill">
               Get Started →
             </a>
-            <a href="#how-it-works" className="btn-pill btn-secondary-pill">
+            <a href="#seamless-experience" className="btn-pill btn-secondary-pill">
               How it works →
             </a>
           </div>

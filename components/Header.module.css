@@ -2,9 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  border-bottom: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: saturate(1.2) blur(10px);
+  border-bottom: none;
+  background: #36596C;
 }
 
 .inner {
@@ -18,7 +17,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  color: var(--text);
+  color: #ffffff;
 }
 
 .logoMark {
@@ -41,14 +40,14 @@
 .loginLink {
   font-size: 0.84rem;
   font-weight: 600;
-  color: var(--text);
+  color: #ffffff;
   padding: 0.45rem 0.6rem;
   border-radius: var(--radius-sm);
   transition: background-color 0.2s ease;
 }
 
 .loginLink:hover {
-  background: #f3f4f6;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .signupButton {
@@ -60,15 +59,14 @@
   padding: 0.5rem 1rem;
   font-size: 0.84rem;
   font-weight: 700;
-  color: #ffffff;
-  background: linear-gradient(180deg, var(--green-bright) 0%, var(--green-glow) 100%);
-  box-shadow: 0 8px 18px rgba(0, 203, 83, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #36596C;
+  background: #ffffff;
+  transition: transform 0.2s ease;
 }
 
 .signupButton:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(0, 203, 83, 0.32);
+  background: #f8fafc;
 }
 
 @media (max-width: 768px) {

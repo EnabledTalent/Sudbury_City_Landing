@@ -9,7 +9,7 @@ export default function EmployersProviders() {
           <div className="ep-dashboard-preview ep-dashboard-preview--mobile-only">
             <div className="ep-card ep-branding-card">
               <span className="ep-branding-icon">
-                <img src="/assets/seamless/workforce-platform.svg" alt="" />
+                <img src="/assets/footer/sudbury-footer-logo.svg" alt="" />
               </span>
               <strong className="ep-branding-name">Sudbury Workforce Platform</strong>
               <span className="ep-branding-url">workforce.sudbury.ca</span>
@@ -120,7 +120,7 @@ export default function EmployersProviders() {
           <div className="ep-dashboard-preview">
             <div className="ep-card ep-branding-card">
               <span className="ep-branding-icon">
-                <img src="/assets/seamless/workforce-platform.svg" alt="" />
+                <img src="/assets/footer/sudbury-footer-logo.svg" alt="" />
               </span>
               <strong className="ep-branding-name">Sudbury Workforce Platform</strong>
               <span className="ep-branding-url">workforce.sudbury.ca</span>
@@ -258,6 +258,7 @@ export default function EmployersProviders() {
 
 
         .ep-main-heading {
+          font-family: var(--font-serif), serif;
           font-size: 32px;
           font-weight: 700;
           color: #111827;
@@ -320,8 +321,10 @@ export default function EmployersProviders() {
         }
 
         .ep-feature-desc {
+          font-family: var(--font);
+          font-weight: 300;
           font-size: 16px;
-          color: #6b7280;
+          color: #333333;
           line-height: 1.45;
           margin: 0;
           max-width: 600px;
@@ -356,12 +359,12 @@ export default function EmployersProviders() {
           border-radius: 8px;
         }
 
-        .ep-metric--purple { background: #f3e8ff; }
-        .ep-metric--purple .ep-metric-value { color: #7c3aed; }
-        .ep-metric--green { background: #dcfce7; }
-        .ep-metric--green .ep-metric-value { color: #16a34a; }
-        .ep-metric--blue { background: #dbeafe; }
-        .ep-metric--blue .ep-metric-value { color: #2563eb; }
+        .ep-metric--purple { background: #FAF5FF; }
+        .ep-metric--purple .ep-metric-value { color: #A855F7; }
+        .ep-metric--green { background: #EFF6FF; }
+        .ep-metric--green .ep-metric-value { color: #1F2937; }
+        .ep-metric--blue { background: #EFF6FF; }
+        .ep-metric--blue .ep-metric-value { color: #3B82F6; }
 
         .ep-metric-value {
           display: block;
@@ -372,7 +375,8 @@ export default function EmployersProviders() {
 
         .ep-metric-label {
           font-size: 0.85rem;
-          color: #6b7280;
+          color: #000000;
+          font-weight: 500;
           white-space: nowrap;
         }
 

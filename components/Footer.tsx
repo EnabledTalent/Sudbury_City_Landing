@@ -9,12 +9,12 @@ export default function Footer() {
         <div className={styles.brandRow}>
           <Link href="/" className={styles.logo}>
             <Image
-              src="/assets/header/Logo.svg"
+              src="/assets/footer/sudbury-footer-logo.svg"
               alt=""
               aria-hidden="true"
               className={styles.logoImage}
-              width={46}
-              height={46}
+              width={63}
+              height={63}
             />
             <span className={styles.logoText}>Sudbury Jobs</span>
           </Link>

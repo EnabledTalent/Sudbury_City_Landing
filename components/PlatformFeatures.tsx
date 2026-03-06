@@ -5,7 +5,7 @@ export default function PlatformFeatures() {
     <section className="platform-features" id="platform-features">
       <div className="platform-container">
         <h2 className="platform-features-title">
-          <span className="platform-title-line1">One Platform, Unlimited</span>
+          <span className="platform-title-line1">One Platform, Unlimited </span>
           <br className="platform-title-br" />
           <span className="platform-title-line2">Possibilities</span>
         </h2>
@@ -15,7 +15,7 @@ export default function PlatformFeatures() {
         <div className="platform-features-grid">
           <div className="feature-block">
             <span className="feature-icon" aria-hidden="true">
-              <img src="/assets/platform/unified-sudbury.svg" alt="" />
+              <img src="/assets/platform/unified-portal.svg" alt="" />
             </span>
             <h3 className="feature-block-title">Unified Sudbury Portal</h3>
             <p className="feature-block-desc">
@@ -27,7 +27,7 @@ export default function PlatformFeatures() {
           </div>
           <div className="feature-block">
             <span className="feature-icon" aria-hidden="true">
-              <img src="/assets/platform/local-hiring.svg" alt="" />
+              <img src="/assets/platform/local-hiring-marketplace.svg" alt="" />
             </span>
             <h3 className="feature-block-title">Local Hiring Marketplace</h3>
             <p className="feature-block-desc">
@@ -39,7 +39,7 @@ export default function PlatformFeatures() {
           </div>
           <div className="feature-block">
             <span className="feature-icon" aria-hidden="true">
-              <img src="/assets/platform/training-pathways.svg" alt="" />
+              <img src="/assets/platform/integrated-training-pathways.svg" alt="" />
             </span>
             <h3 className="feature-block-title">Integrated Training Pathways</h3>
             <p className="feature-block-desc">
@@ -51,7 +51,7 @@ export default function PlatformFeatures() {
           </div>
           <div className="feature-block">
             <span className="feature-icon" aria-hidden="true">
-              <img src="/assets/platform/workforce-services.svg" alt="" />
+              <img src="/assets/platform/sudbury-work-services.svg" alt="" />
             </span>
             <h3 className="feature-block-title">Sudbury Workforce Services</h3>
             <p className="feature-block-desc">
@@ -78,12 +78,13 @@ export default function PlatformFeatures() {
         }
 
         .platform-features-title {
+          font-family: var(--font-serif), serif;
           font-size: 48px;
           font-weight: 700;
           color: #0b0b0b;
           text-align: center;
           margin: 0 0 0.5rem;
-          letter-spacing: -0.02em;
+          letter-spacing: -0.01em;
         }
 
         .platform-title-br {
@@ -91,8 +92,9 @@ export default function PlatformFeatures() {
         }
 
         .platform-features-subtitle {
+          font-weight: 300;
+          color: #333333;
           font-size: 20px;
-          color: #6b7280;
           text-align: center;
           max-width: 1100px;
           margin: 0 auto 5.5rem;
@@ -145,8 +147,9 @@ export default function PlatformFeatures() {
         }
 
         .feature-block-desc {
+          font-weight: 300;
+          color: #333333;
           font-size: 16px;
-          color: #6b7280;
           line-height: 1.6;
           margin: 0 auto;
           width: 100%;

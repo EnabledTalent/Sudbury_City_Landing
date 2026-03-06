@@ -24,8 +24,8 @@ export default function CTA() {
 
         .cta-section {
           padding-block: 8.5rem 9rem;
-          background-color: #0b6d2b;
-          background-image: linear-gradient(135deg, #0b6d2b 0%, #0a5f26 100%);
+          background-color: #8C7259;
+          background-image: linear-gradient(135deg, #8C7259 0%, #765F48 100%);
           position: relative;
           overflow: hidden;
           color: #ffffff;
@@ -49,8 +49,9 @@ export default function CTA() {
         }
 
         .cta-title {
+          font-family: var(--font-serif), serif;
           font-size: clamp(1.8rem, 4.5vw, 2.75rem);
-          font-weight: 600;
+          font-weight: 700;
           color: #ffffff;
           margin: 0 0 1.25rem;
           line-height: 1;

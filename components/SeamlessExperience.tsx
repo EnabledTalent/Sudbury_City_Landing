@@ -16,14 +16,10 @@ export default function SeamlessExperience() {
       <section id="seamless-experience" className="seamless-section">
         <div className="container">
           <h2 className="seamless-title">
-            A seamless experience{' '}
-            <br className="seamless-title-br seamless-title-br--mobile" />
-            designed for{' '}
-            <br className="seamless-title-br seamless-title-br--mobile" />
+            A seamless experience designed for
+            <br />
             <span>
-              Job Seekers, Employers,{' '}
-              <br className="seamless-title-br seamless-title-br--mobile" />
-              and Service Providers
+              Job Seekers, Employers, and Service Providers
             </span>
           </h2>
           <h3 className="seamless-heading seamless-mobile-getting-started">Getting Started</h3>
@@ -37,10 +33,10 @@ export default function SeamlessExperience() {
                   </span>
                   <div>
                     <strong className="seamless-step-title">Choose Your Role</strong>
-                      <p className="seamless-step-desc">
-                        Select your profile type during registration. Switch between roles<br />
-                        anytime - job seekers can become employers, and vice versa.
-                      </p>
+                    <p className="seamless-step-desc">
+                      Select your profile type during registration. Switch between roles<br />
+                      anytime - job seekers can become employers, and vice versa.
+                    </p>
                   </div>
                 </div>
                 <div className="seamless-step">
@@ -190,18 +186,20 @@ export default function SeamlessExperience() {
         }
 
         .seamless-title {
+          font-family: var(--font-serif), serif;
           font-size: 48px;
           font-weight: 700;
           color: #111827;
           text-align: center;
-          max-width: 1100px;
+          max-width: 1200px;
           margin: 0 auto 7.5rem;
           line-height: 1.1;
         }
 
         .seamless-title span {
           display: block;
-          color: #16a34a;
+          color: #8C7259;
+          white-space: nowrap;
         }
 
         .seamless-title-br {
@@ -231,6 +229,7 @@ export default function SeamlessExperience() {
         }
 
         .seamless-heading {
+          font-family: var(--font-serif), serif;
           font-size: 32px;
           font-weight: 700;
           color: #1f2937;
@@ -269,8 +268,10 @@ export default function SeamlessExperience() {
         }
 
         .seamless-step-desc {
+          font-family: var(--font);
+          font-weight: 300;
           font-size: 17px;
-          color: #6b7280;
+          color: #333333;
           line-height: 1.6;
           margin: 0;
           max-width: 1000px;
@@ -318,14 +319,14 @@ export default function SeamlessExperience() {
           align-items: center;
           justify-content: center;
           gap: 0.6rem;
-          border: 1px solid #4ade80;
-          background: #f0fdf4;
+          border: 1px solid #67CAFF;
+          background: #f0f9ff;
           padding: 1rem 0.5rem;
           border-radius: 16px;
           cursor: pointer;
           font-weight: 700;
           font-size: 0.85rem;
-          color: #064e3b;
+          color: #1a1a1a;
           transition: all 0.2s ease;
           box-shadow: none;
           height: 110px;
@@ -340,10 +341,12 @@ export default function SeamlessExperience() {
         }
 
         .seamless-role-card.active {
-          background: linear-gradient(180deg, #0b6d2b 0%, #0a5f26 100%);
+          background-image: linear-gradient(180deg, #36596C 0%, #67CAFF 100%), linear-gradient(180deg, #67CAFF 0%, #36596C 100%);
+          background-origin: border-box;
+          background-clip: padding-box, border-box;
+          border: 2px solid transparent;
           color: #ffffff;
-          border-color: transparent;
-          box-shadow: 0 10px 30px rgba(11, 109, 43, 0.35);
+          box-shadow: 0 16px 55px rgba(54, 89, 108, 0.6);
           transform: translateY(-2px);
         }
 
@@ -416,19 +419,19 @@ export default function SeamlessExperience() {
           max-width: 300px;
           margin: 0 auto;
           justify-content: center;
-          background: #00ec5b;
+          background: #67CAFF;
           color: #1a1a1a;
           border-radius: 999px;
           font-weight: 600;
           font-size: 0.95rem;
           padding: 1rem 1.5rem;
-          box-shadow: 0 10px 25px rgba(0, 236, 91, 0.3);
+          box-shadow: 0 10px 25px rgba(103, 202, 255, 0.3);
           transition: all 0.2s ease;
         }
 
         .btn-signup:hover {
-          background: #00d955;
-          box-shadow: 0 14px 30px rgba(0, 236, 91, 0.4);
+          background: #5ab8e6;
+          box-shadow: 0 14px 30px rgba(103, 202, 255, 0.4);
           transform: translateY(-1px);
         }
 
@@ -500,9 +503,11 @@ export default function SeamlessExperience() {
         }
 
         .seamless-notif-content p {
+          font-family: var(--font);
+          font-weight: 300;
           font-size: 15px;
           margin: 0;
-          color: #4b5563;
+          color: #333333;
           line-height: 1.3;
           white-space: normal;
         }
@@ -614,6 +619,7 @@ export default function SeamlessExperience() {
           #seamless-experience .seamless-title span {
             max-width: 100%;
             margin-inline: auto;
+            white-space: normal;
           }
 
           #seamless-experience .seamless-title-br--mobile {

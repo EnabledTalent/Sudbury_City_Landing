@@ -1,8 +1,5 @@
 .footer {
-  background:
-    radial-gradient(100% 160% at 85% 10%, rgba(0, 223, 59, 0.12) 0%, rgba(1, 30, 24, 0) 45%),
-    radial-gradient(120% 180% at 0% 100%, rgba(22, 163, 74, 0.24) 0%, rgba(1, 30, 24, 0) 45%),
-    #011e18;
+  background: #000000;
   color: #ffffff;
   padding: 4.75rem 0 2.75rem;
 }
@@ -106,7 +103,7 @@
     width: 100%;
   }
 
-  .linkGroup + .linkGroup {
+  .linkGroup+.linkGroup {
     margin-top: 0.65rem;
     padding-top: 1.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.12);

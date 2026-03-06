@@ -35,17 +35,20 @@ export default function TrustedOrganizations() {
         }
 
         .trusted-title {
+          font-family: var(--font-serif), serif;
           font-size: 48px;
           font-weight: 700;
           color: #111827;
           text-align: center;
           margin: 0 0 1.25rem;
-          letter-spacing: -0.02em;
+          letter-spacing: -0.01em;
         }
 
         .trusted-subtitle {
+          font-family: var(--font);
+          font-weight: 300;
           font-size: 20px;
-          color: #6b7280;
+          color: #333333;
           text-align: center;
           max-width: 1100px;
           margin: 0 auto 6rem;

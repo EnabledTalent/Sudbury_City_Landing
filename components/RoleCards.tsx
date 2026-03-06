@@ -266,17 +266,17 @@ export default function RoleCards() {
 
         .role-tab.active {
           color: #ffffff;
-          background: #0b6d2b;
+          background: #36596C;
           font-family: 'Outfit', sans-serif;
           font-weight: 400;
           line-height: 1;
-          box-shadow: 0 6px 14px rgba(14, 143, 55, 0.25);
+          box-shadow: 0 6px 14px rgba(54, 89, 108, 0.25);
         }
 
         .role-tab:focus-visible,
         .carousel-btn:focus-visible,
         .role-card-link:focus-visible {
-          outline: 3px solid #14532d;
+          outline: 3px solid #36596C;
           outline-offset: 2px;
         }
 
@@ -407,7 +407,7 @@ export default function RoleCards() {
           min-height: 24px;
           font-size: 0.78rem;
           font-weight: 600;
-          color: #0b6d2b;
+          color: #36596C;
           margin-left: auto;
           padding-left: 0.25rem;
           text-decoration: none;

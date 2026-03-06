@@ -77,7 +77,7 @@ export default function Integrations() {
         .integrations-section__bg {
           position: absolute;
           inset: 0;
-          background: radial-gradient(circle at center, #CAFFDF 0%, #ffffff 70%);
+          background: radial-gradient(circle at center, #EFE6E6 0%, #ffffff 70%);
           pointer-events: none;
         }
 
@@ -87,6 +87,7 @@ export default function Integrations() {
         }
 
         .integrations-section__title {
+          font-family: var(--font-serif), serif;
           font-size: 48px;
           font-weight: 700;
           color: #000000;
@@ -103,9 +104,10 @@ export default function Integrations() {
         }
 
         .integrations-section__desc {
+          font-family: var(--font);
+          font-weight: 300;
           font-size: 20px;
-          font-weight: 400;
-          color: #6b7280;
+          color: #333333;
           text-align: center;
           max-width: 1100px;
           margin: 0 auto 5.5rem;

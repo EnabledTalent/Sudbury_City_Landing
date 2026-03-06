@@ -13,24 +13,21 @@ export default function Hero() {
         <div className={`page-container ${styles.content}`}>
           <p className={styles.badge}>
             <span className={styles.badgeDot} aria-hidden="true" />
-            Serving Greater Sudbury and Northern Ontario
+            Serving Greater Sudbury &amp; Northern Ontario
           </p>
 
           <h1 className={styles.title}>
-            Sudbury&apos;s Platform
-            <br className={styles.mobileOnly} />
-            {' '}for{' '}
+            Sudbury&apos;s Platform for
+            <br />
             <span className={styles.accent}>
-              Jobs, Hiring, and
-              <br className={styles.mobileOnly} />
-              {' '}Workforce Services
+              Jobs, Hiring, and Workforce Services
             </span>
           </h1>
 
           <p className={styles.description}>
-            Greater Sudbury&apos;s unified workforce portal connecting job seekers, employers,
-            and service providers. Access local jobs, training programs, and workforce services
-            all in one secure, accessible platform.
+            Greater Sudbury&apos;s unified workforce portal connecting job seekers, employers, and service providers.
+            <br className={styles.desktopOnly} />
+            Access local jobs, training programs, and workforce services all in one secure, accessible platform.
           </p>
 
           <div className={styles.ctas}>

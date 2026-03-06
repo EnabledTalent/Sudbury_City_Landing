@@ -152,17 +152,20 @@ export default function Stakeholders() {
         }
 
         .stakeholders-title {
+          font-family: var(--font-serif), serif;
           font-size: 48px;
           font-weight: 700;
           color: #111827;
           text-align: center;
           margin: 0 0 0.5rem;
-          letter-spacing: -0.02em;
+          letter-spacing: -0.01em;
         }
 
         .stakeholders-subtitle {
+          font-family: var(--font);
           font-size: 20px;
-          color: #6b7280;
+          font-weight: 300;
+          color: #333333;
           text-align: center;
           max-width: 900px;
           margin: 0 auto 4.25rem;
@@ -223,17 +226,17 @@ export default function Stakeholders() {
         }
 
         .stakeholder-card--seekers {
-          background: #cfe9e5;
-          color: #1f2937;
+          background: linear-gradient(135deg, #E8E8E8 0%, #F5F5F5 100%);
+          color: #111827;
         }
 
         .stakeholder-card--employers {
-          background: #b8c5f2;
-          color: #1f2937;
+          background: linear-gradient(135deg, #E4D8CC 0%, #F8EFE7 100%);
+          color: #111827;
         }
 
         .stakeholder-card--providers {
-          background: #7a12c6;
+          background: linear-gradient(135deg, #084E3B 0%, #168466 100%);
           color: #ffffff;
         }
 
@@ -248,6 +251,7 @@ export default function Stakeholders() {
         }
 
         .stakeholder-card-label {
+          font-family: var(--font-serif), serif;
           font-size: 1.25rem;
           font-weight: 700;
         }
@@ -265,9 +269,11 @@ export default function Stakeholders() {
           display: flex;
           align-items: flex-start;
           gap: 0.75rem;
+          font-family: var(--font);
           font-size: 0.95rem;
           line-height: 1.4;
-          font-weight: 500;
+          font-weight: 300;
+          color: #333333;
         }
 
         .checkmark {

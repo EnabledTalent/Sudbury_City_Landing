@@ -83,6 +83,7 @@ export default function EnterpriseTrusted() {
         }
 
         .et-main-title {
+          font-family: var(--font-serif), serif;
           font-size: 48px;
           font-weight: 700;
           color: #333333;
@@ -91,9 +92,10 @@ export default function EnterpriseTrusted() {
         }
 
         .et-subtitle {
+          font-family: var(--font);
+          font-weight: 300;
           font-size: 20px;
-          font-weight: 400;
-          color: #666666;
+          color: #333333;
           text-align: center;
           max-width: 680px;
           margin: 0 auto 5.5rem;
@@ -165,9 +167,10 @@ export default function EnterpriseTrusted() {
         }
 
         .et-card-desc {
+          font-family: var(--font);
+          font-weight: 300;
           font-size: 16px;
-          font-weight: 400;
-          color: #666666;
+          color: #333333;
           line-height: 1.4;
           white-space: nowrap;
         }

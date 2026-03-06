@@ -8,7 +8,7 @@ export default function Header() {
       <div className={`page-container ${styles.inner}`}>
         <Link href="/" className={styles.logo}>
           <Image
-            src="/assets/header/Logo.svg"
+            src="/assets/header/SudburyLogo.svg"
             alt=""
             aria-hidden="true"
             className={styles.logoMark}

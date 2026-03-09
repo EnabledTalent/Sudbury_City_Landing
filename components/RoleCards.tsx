@@ -133,6 +133,7 @@ export default function RoleCards() {
   return (
     <section id="role-cards" className="role-cards-section">
       <div className="container">
+        <h2 className="role-cards-heading">Role-specific opportunities</h2>
         <div className="role-cards-header">
           <div className="role-tabs" role="tablist" aria-label="Audience">
             {TABS.map(({ id, label }) => (
@@ -227,6 +228,18 @@ export default function RoleCards() {
           background: #ffffff;
         }
 
+        .role-cards-heading {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+
         .role-cards-header {
           display: flex;
           align-items: center;
@@ -270,13 +283,16 @@ export default function RoleCards() {
           font-family: 'Outfit', sans-serif;
           font-weight: 400;
           line-height: 1;
-          box-shadow: 0 6px 14px rgba(54, 89, 108, 0.25);
+          text-decoration: underline;
+          text-underline-offset: 0.28em;
+          text-decoration-thickness: 2px;
+          box-shadow: 0 6px 14px rgba(54, 89, 108, 0.25), inset 0 0 0 2px #ffffff;
         }
 
         .role-tab:focus-visible,
         .carousel-btn:focus-visible,
         .role-card-link:focus-visible {
-          outline: 3px solid #36596C;
+          outline: 3px solid #005fcc;
           outline-offset: 2px;
         }
 

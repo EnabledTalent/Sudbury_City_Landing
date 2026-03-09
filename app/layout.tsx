@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   title: 'Sudbury Jobs - Landing Page',
   description: "Landing page for Sudbury's platform for jobs, hiring, and workforce services.",
   icons: {
-    icon: '/assets/header/Logo.svg',
-    shortcut: '/assets/header/Logo.svg',
-    apple: '/assets/header/Logo.svg',
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
 }
 

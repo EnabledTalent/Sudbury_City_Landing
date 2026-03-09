@@ -96,7 +96,7 @@ export default function SeamlessExperience() {
           <div className="seamless-grid seamless-grid--part2">
             <div className="seamless-left">
               <div className="seamless-notifications seamless-notifications--part2">
-                <div className="seamless-notif seamless-notif--green">
+                <div className="seamless-notif seamless-notif--light-blue">
                   <div className="seamless-notif-top">
                     <span className="seamless-notif-icon" aria-hidden="true">
                       <img src="/assets/seamless/new-job-match.svg" alt="" />
@@ -519,7 +519,7 @@ export default function SeamlessExperience() {
           margin-top: 0.25rem;
         }
 
-        .seamless-notif--green::before,
+        .seamless-notif--light-blue::before,
         .seamless-notif--blue::before,
         .seamless-notif--orange::before {
           content: '';
@@ -531,7 +531,7 @@ export default function SeamlessExperience() {
           border-radius: 20px 0 0 20px;
         }
 
-        .seamless-notif--green::before { background: #10b981; }
+        .seamless-notif--light-blue::before { background: #67CAFF; }
         .seamless-notif--blue::before { background: #3b82f6; }
         .seamless-notif--orange::before { background: #f59e0b; }
 
@@ -630,6 +630,7 @@ export default function SeamlessExperience() {
             display: block;
             text-align: center;
             font-size: 2rem;
+            margin-top: 2.35rem;
             margin-bottom: 1.5rem;
           }
 
@@ -730,10 +731,15 @@ export default function SeamlessExperience() {
           }
 
           #seamless-experience .seamless-step-desc {
-            font-size: 0.95rem;
-            line-height: 1.45;
-            max-width: 320px;
+            font-size: 0.88rem;
+            line-height: 1.42;
+            max-width: 285px;
             margin-inline: auto;
+            text-wrap: balance;
+          }
+
+          #seamless-experience .seamless-step-desc br {
+            display: none;
           }
 
           #seamless-experience .seamless-steps {

@@ -5,6 +5,9 @@ import styles from './Header.module.css'
 export default function Header() {
   return (
     <header className={styles.header}>
+      <a href="#main-content" className={styles.skipLink}>
+        Skip to main content
+      </a>
       <div className={`page-container ${styles.inner}`}>
         <Link href="/" className={styles.logo}>
           <Image

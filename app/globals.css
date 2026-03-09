@@ -45,7 +45,7 @@ a {
 }
 
 :where(a, button, [role='button'], input, select, textarea, summary):focus-visible {
-  outline: 3px solid #14532d;
+  outline: 3px solid #005fcc;
   outline-offset: 2px;
 }
 

@@ -53,7 +53,10 @@ export default function Integrations() {
       <div className="integrations-section__bg" aria-hidden="true" />
       <div className="container integrations-section__inner">
         <h2 id="integrations-heading" className="integrations-section__title">
-          Compatible with <span className="integrations-title-line integrations-title-line--nowrap">Industry-Standard</span>{' '}
+          <span className="integrations-title-line">Compatible with{' '}</span>
+          <br className="integrations-title-break" />
+          <span className="integrations-title-line integrations-title-line--nowrap">Industry-Standard{' '}</span>
+          <br className="integrations-title-break" />
           <span className="integrations-title-line">Hiring Systems</span>
         </h2>
         <p className="integrations-section__desc">
@@ -101,6 +104,10 @@ export default function Integrations() {
 
         .integrations-title-line--nowrap {
           white-space: nowrap;
+        }
+
+        .integrations-title-break {
+          display: none;
         }
 
         .integrations-section__desc {
@@ -176,15 +183,25 @@ export default function Integrations() {
           }
 
           .integrations-section__title {
-            font-size: 2.55rem;
-            line-height: 1.1;
-            max-width: 320px;
+            font-size: 2rem;
+            line-height: 0.98;
+            max-width: 100%;
             margin: 0 auto 1.25rem;
             letter-spacing: -0.02em;
           }
 
           .integrations-title-line {
             display: block;
+            margin: 0;
+          }
+
+          .integrations-title-line:first-child,
+          .integrations-title-line--nowrap {
+            white-space: nowrap;
+          }
+
+          .integrations-title-break {
+            display: none;
           }
 
           .integrations-section__desc {
@@ -193,8 +210,13 @@ export default function Integrations() {
             max-width: 330px;
             margin: 0 auto 2.25rem;
           }
+
+          .integrations-section__desc br {
+            display: none;
+          }
         }
       `}</style>
     </section>
   )
 }
+

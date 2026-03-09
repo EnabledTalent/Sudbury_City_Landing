@@ -38,13 +38,6 @@ export default function Stakeholders() {
     setFlipped((prev) => ({ ...prev, [role]: !prev[role] }))
   }
 
-  const onCardKeyDown = (event: React.KeyboardEvent<HTMLDivElement>, role: Role) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault()
-      toggleFlip(role)
-    }
-  }
-
   return (
     <section className="stakeholders-section" id="stakeholders">
       <span className="stakeholders-accent" aria-hidden="true" />
@@ -55,92 +48,86 @@ export default function Stakeholders() {
         </p>
 
         <div className="stakeholder-cards">
-          <div
+          <button
+            type="button"
             className="stakeholder-card-container"
-            role="button"
-            tabIndex={0}
             aria-label="Toggle details for Job Seekers"
             aria-pressed={flipped.seekers}
             onClick={() => toggleFlip('seekers')}
-            onKeyDown={(event) => onCardKeyDown(event, 'seekers')}
           >
-            <div className={`stakeholder-card-inner ${flipped.seekers ? 'is-flipped' : ''}`}>
-              <article className="stakeholder-card-face stakeholder-card-front stakeholder-card--seekers">
+            <span className={`stakeholder-card-inner ${flipped.seekers ? 'is-flipped' : ''}`}>
+              <span className="stakeholder-card-face stakeholder-card-front stakeholder-card--seekers">
                 <span className="stakeholder-card-icon" aria-hidden="true">
                   <img src="/assets/stakeholders/job-seekers.svg" alt="" />
                 </span>
                 <span className="stakeholder-card-label">Job Seekers</span>
-              </article>
-              <article className="stakeholder-card-face stakeholder-card-back stakeholder-card--seekers">
-                <ul className="stakeholder-features-list">
+              </span>
+              <span className="stakeholder-card-face stakeholder-card-back stakeholder-card--seekers">
+                <span className="stakeholder-features-list" aria-hidden={!flipped.seekers}>
                   {FEATURES.seekers.map((feature, i) => (
-                    <li key={i}>
+                    <span className="stakeholder-feature-item" key={i}>
                       <span className="checkmark" aria-hidden="true">{'\u2713'}</span>
                       {feature}
-                    </li>
+                    </span>
                   ))}
-                </ul>
-              </article>
-            </div>
-          </div>
+                </span>
+              </span>
+            </span>
+          </button>
 
-          <div
+          <button
+            type="button"
             className="stakeholder-card-container"
-            role="button"
-            tabIndex={0}
             aria-label="Toggle details for Employers"
             aria-pressed={flipped.employers}
             onClick={() => toggleFlip('employers')}
-            onKeyDown={(event) => onCardKeyDown(event, 'employers')}
           >
-            <div className={`stakeholder-card-inner ${flipped.employers ? 'is-flipped' : ''}`}>
-              <article className="stakeholder-card-face stakeholder-card-front stakeholder-card--employers">
+            <span className={`stakeholder-card-inner ${flipped.employers ? 'is-flipped' : ''}`}>
+              <span className="stakeholder-card-face stakeholder-card-front stakeholder-card--employers">
                 <span className="stakeholder-card-icon" aria-hidden="true">
                   <img src="/assets/stakeholders/employers.svg" alt="" />
                 </span>
                 <span className="stakeholder-card-label">Employers</span>
-              </article>
-              <article className="stakeholder-card-face stakeholder-card-back stakeholder-card--employers">
-                <ul className="stakeholder-features-list">
+              </span>
+              <span className="stakeholder-card-face stakeholder-card-back stakeholder-card--employers">
+                <span className="stakeholder-features-list" aria-hidden={!flipped.employers}>
                   {FEATURES.employers.map((feature, i) => (
-                    <li key={i}>
+                    <span className="stakeholder-feature-item" key={i}>
                       <span className="checkmark" aria-hidden="true">{'\u2713'}</span>
                       {feature}
-                    </li>
+                    </span>
                   ))}
-                </ul>
-              </article>
-            </div>
-          </div>
+                </span>
+              </span>
+            </span>
+          </button>
 
-          <div
+          <button
+            type="button"
             className="stakeholder-card-container"
-            role="button"
-            tabIndex={0}
             aria-label="Toggle details for Service Providers"
             aria-pressed={flipped.providers}
             onClick={() => toggleFlip('providers')}
-            onKeyDown={(event) => onCardKeyDown(event, 'providers')}
           >
-            <div className={`stakeholder-card-inner ${flipped.providers ? 'is-flipped' : ''}`}>
-              <article className="stakeholder-card-face stakeholder-card-front stakeholder-card--providers">
+            <span className={`stakeholder-card-inner ${flipped.providers ? 'is-flipped' : ''}`}>
+              <span className="stakeholder-card-face stakeholder-card-front stakeholder-card--providers">
                 <span className="stakeholder-card-icon" aria-hidden="true">
                   <img src="/assets/stakeholders/service-providers.svg" alt="" />
                 </span>
                 <span className="stakeholder-card-label">Service Providers</span>
-              </article>
-              <article className="stakeholder-card-face stakeholder-card-back stakeholder-card--providers">
-                <ul className="stakeholder-features-list">
+              </span>
+              <span className="stakeholder-card-face stakeholder-card-back stakeholder-card--providers">
+                <span className="stakeholder-features-list" aria-hidden={!flipped.providers}>
                   {FEATURES.providers.map((feature, i) => (
-                    <li key={i}>
+                    <span className="stakeholder-feature-item" key={i}>
                       <span className="checkmark" aria-hidden="true">{'\u2713'}</span>
                       {feature}
-                    </li>
+                    </span>
                   ))}
-                </ul>
-              </article>
-            </div>
-          </div>
+                </span>
+              </span>
+            </span>
+          </button>
         </div>
       </div>
 
@@ -181,21 +168,31 @@ export default function Stakeholders() {
         }
 
         .stakeholder-card-container {
+          display: block;
+          width: 100%;
           perspective: 1000px;
           min-height: 360px;
           cursor: pointer;
+          border: none;
+          padding: 0;
+          margin: 0;
+          background: transparent;
+          text-align: left;
+          appearance: none;
+          -webkit-appearance: none;
         }
 
         .stakeholder-card-container:focus-visible {
-          outline: 3px solid #14532d;
+          outline: 3px solid #005fcc;
           outline-offset: 4px;
           border-radius: 18px;
         }
 
         .stakeholder-card-inner {
+          display: block;
           position: relative;
           width: 100%;
-          height: 100%;
+          min-height: 360px;
           transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
           transform-style: preserve-3d;
         }
@@ -207,6 +204,8 @@ export default function Stakeholders() {
         .stakeholder-card-face {
           position: absolute;
           inset: 0;
+          width: 100%;
+          height: 100%;
           backface-visibility: hidden;
           border-radius: 16px;
           padding: 1.5rem 1.25rem;
@@ -257,7 +256,6 @@ export default function Stakeholders() {
         }
 
         .stakeholder-features-list {
-          list-style: none;
           padding: 0;
           margin: 0;
           display: flex;
@@ -265,7 +263,7 @@ export default function Stakeholders() {
           gap: 0.75rem;
         }
 
-        .stakeholder-features-list li {
+        .stakeholder-feature-item {
           display: flex;
           align-items: flex-start;
           gap: 0.75rem;
@@ -279,6 +277,10 @@ export default function Stakeholders() {
         .checkmark {
           color: #111827;
           font-weight: 700;
+        }
+
+        .stakeholder-card--providers .stakeholder-feature-item {
+          color: #ffffff;
         }
 
         .stakeholder-card--providers .checkmark {
@@ -314,6 +316,7 @@ export default function Stakeholders() {
             transform-style: flat;
             display: flex;
             flex-direction: column;
+            min-height: auto;
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -340,4 +343,3 @@ export default function Stakeholders() {
     </section>
   )
 }
-

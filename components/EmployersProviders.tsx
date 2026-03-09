@@ -83,7 +83,7 @@ export default function EmployersProviders() {
               </div>
             </div>
             <div className="ep-activity-list">
-              <div className="ep-activity ep-activity--green">
+              <div className="ep-activity ep-activity--light-blue">
                 <span className="ep-activity-icon" aria-hidden="true">
                   <img src="/assets/seamless/new referral.svg" alt="" />
                 </span>
@@ -166,7 +166,7 @@ export default function EmployersProviders() {
               </div>
             </div>
             <div className="ep-activity-list">
-              <div className="ep-activity ep-activity--green">
+              <div className="ep-activity ep-activity--light-blue">
                 <span className="ep-activity-icon" aria-hidden="true">
                   <img src="/assets/seamless/new referral.svg" alt="" />
                 </span>
@@ -408,7 +408,7 @@ export default function EmployersProviders() {
           width: 8px;
         }
 
-        .ep-activity--green::before { background: #10b981; }
+        .ep-activity--light-blue::before { background: #67CAFF; }
         .ep-activity--blue::before { background: #3b82f6; }
         .ep-activity--purple::before { background: #8b5cf6; }
 

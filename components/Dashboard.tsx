@@ -117,11 +117,14 @@ export default function Dashboard() {
         .dashboard-tab.active {
           color: #ffffff;
           background: #36596C;
-          box-shadow: 0 6px 14px rgba(54, 89, 108, 0.25);
+          text-decoration: underline;
+          text-underline-offset: 0.28em;
+          text-decoration-thickness: 2px;
+          box-shadow: 0 6px 14px rgba(54, 89, 108, 0.25), inset 0 0 0 2px #ffffff;
         }
 
         .dashboard-tab:focus-visible {
-          outline: 3px solid #36596C;
+          outline: 3px solid #005fcc;
           outline-offset: 2px;
         }
 

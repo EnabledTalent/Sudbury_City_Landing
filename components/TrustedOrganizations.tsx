@@ -11,7 +11,11 @@ export default function TrustedOrganizations() {
   return (
     <section className="trusted-org-section">
       <div className="container">
-        <h2 className="trusted-title">Trusted by Sudbury Organizations</h2>
+        <h2 className="trusted-title">
+          Trusted by Sudbury{' '}
+          <br className="trusted-title-break" />
+          Organizations
+        </h2>
         <p className="trusted-subtitle">A platform built on security, compliance, and community partnerships across Greater Sudbury</p>
         <div className="trusted-row">
           {TRUSTED_ITEMS.map((item) => (
@@ -42,6 +46,10 @@ export default function TrustedOrganizations() {
           text-align: center;
           margin: 0 0 1.25rem;
           letter-spacing: -0.01em;
+        }
+
+        .trusted-title-break {
+          display: none;
         }
 
         .trusted-subtitle {
@@ -107,6 +115,10 @@ export default function TrustedOrganizations() {
             margin-bottom: 0.9rem;
           }
 
+          .trusted-title-break {
+            display: block;
+          }
+
           .trusted-subtitle {
             font-size: 0.9rem;
             max-width: 320px;
@@ -138,3 +150,4 @@ export default function TrustedOrganizations() {
     </section>
   )
 }
+

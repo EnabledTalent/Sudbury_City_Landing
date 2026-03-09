@@ -162,6 +162,7 @@
   }
 
   .badge {
+    margin-top: 0.75rem;
     margin-bottom: 1rem;
     font-size: 0.84rem;
   }
@@ -191,7 +192,7 @@
   }
 
   .partners {
-    padding-top: 1.4rem;
+    display: none;
   }
 
   .mobileOnly {

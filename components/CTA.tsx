@@ -5,7 +5,13 @@ export default function CTA() {
     <section className="cta-section">
       <div className="cta-bg-waves" aria-hidden="true" />
       <div className="container cta-inner">
-        <h2 className="cta-title">Ready to Transform Sudbury's Workforce?</h2>
+        <h2 className="cta-title">
+          Ready to Transform{' '}
+          <br className="cta-title-break" />
+          Sudbury&apos;s{' '}
+          <br className="cta-title-break" />
+          Workforce?
+        </h2>
         <p className="cta-desc">
           Join Greater Sudbury's unified platform connecting job seekers, employers, and service providers.
           <br />
@@ -57,6 +63,10 @@ export default function CTA() {
           line-height: 1;
           letter-spacing: 0;
           white-space: nowrap;
+        }
+
+        .cta-title-break {
+          display: none;
         }
 
         .cta-desc {
@@ -120,8 +130,13 @@ export default function CTA() {
             font-size: 1.85rem;
             white-space: normal;
           }
+
+          .cta-title-break {
+            display: block;
+          }
         }
       `}</style>
     </section>
   )
 }
+

@@ -17,10 +17,16 @@ export default function Hero() {
           </p>
 
           <h1 className={styles.title}>
-            Sudbury&apos;s Platform for
+            Sudbury&apos;s{' '}
+            <br className={styles.mobileOnly} />
+            Platform for
             <br />
             <span className={styles.accent}>
-              Jobs, Hiring, and Workforce Services
+              Jobs, Hiring, and{' '}
+              <br className={styles.mobileOnly} />
+              Workforce{' '}
+              <br className={styles.mobileOnly} />
+              Services
             </span>
           </h1>
 

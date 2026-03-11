@@ -1,4 +1,4 @@
-import PartnerCarousel from './PartnerCarousel'
+// import PartnerCarousel from './PartnerCarousel'
 import styles from './Hero.module.css'
 
 export default function Hero() {
@@ -46,11 +46,11 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className={styles.partners}>
+        {/* <div className={styles.partners}>
           <div className="page-container">
             <PartnerCarousel />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
